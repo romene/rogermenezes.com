@@ -2,13 +2,14 @@
 
 import React from "react"
 import NavigationBar from './Global/NavigationBar'
-import Hero from './Global/Hero'
+import Hero2 from './Global/Hero2'
 
 const Header = () => {
   return (
     <div>
       <NavigationBar />
-      <Hero />
+      {/* <Hero /> */}
+      <Hero2 />
     </div>
   )
 }

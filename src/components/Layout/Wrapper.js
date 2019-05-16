@@ -11,7 +11,7 @@ grid-template-rows: 1fr;
 grid-template-areas: "HeroText HeroImage";
 
 @media (max-width: 767.98px) {
-    height: 70vh;
+    height: 100vh;
     margin: 5em 0 0 0;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(auto-fill, minmax(200px, 400px)); 
