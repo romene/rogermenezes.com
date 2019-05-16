@@ -31,13 +31,13 @@ export default Menu
 
 const NavBarLinks = styled.ul`
 grid-area: Menu;
-padding: ${props => props.open ? '3.5rem 0 0 0' : '0'};
+padding: ${props => props.open ? '3.5rem 0 .5rem 0' : '0'};
 overflow: hidden;
-height: ${props => props.open ? '184px' : '0'};
+height: ${props => props.open ? 'auto' : '0'};
 display: block;
 width: 100%;
-box-shadow:  0 10px 50px rgba(0, 0, 0, 0.2);
-position: absolute;
+
+
 
 a{
   color: black;
