@@ -10,7 +10,7 @@ const Hero = () => {
               <img src={HeroPhoto} className="img-fluid" alt=""/>
           </HeroImage>
           <HeroText>
-              <SubTitle>Hello, My name is</SubTitle>
+        <SubTitle><h5>Hello, My name is</h5></SubTitle>
         <Title><h1>Roger Menezes</h1></Title>
               <SubTitle secundary>FRON-END DEVELOPER * ERP CONSULTANT * MINIMALIST</SubTitle>
                 <Button>Find out more...</Button>
@@ -49,7 +49,7 @@ margin-left: 3rem;
 
 `
 
-const SubTitle = styled.h5`
+const SubTitle = styled.div`
 color: #c2c2c2;
 text-align: left;
 text-transform: uppercase;
@@ -57,6 +57,7 @@ text-transform: uppercase;
 
 ${props => props.secundary && css`
 color: #000;
+margin-bottom: 2em;
 `}
 `
 
