@@ -89,6 +89,9 @@ grid-template-areas:
 "CardImg"
 "CardContent";
 
+@media(max-width: 768px){
+  
+}
 `
 
 const CardImg = styled.div`

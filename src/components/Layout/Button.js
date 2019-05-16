@@ -4,6 +4,7 @@ export default styled.button`
     width: auto;
     height: auto;
     padding: .8em;
+    margin-top: 2em;
  
      background-color: #fff;
         color: #954646;

@@ -7,11 +7,11 @@ const Hero = () => {
   return (
     <Wrapper>
           <HeroImage>
-              <img src={""} className="img-fluid" alt=""/>
+              <img src={HeroPhoto} className="img-fluid" alt=""/>
           </HeroImage>
           <HeroText>
-              <SubTitle >Hello, My name is</SubTitle>
-              <Title>Roger Menezes</Title>
+              <SubTitle>Hello, My name is</SubTitle>
+        <Title><h1>Roger Menezes</h1></Title>
               <SubTitle secundary>FRON-END DEVELOPER * ERP CONSULTANT * MINIMALIST</SubTitle>
                 <Button>Find out more...</Button>
           </HeroText>
@@ -31,17 +31,12 @@ box-sizing: border-box;
 display: flex;
 justify-content: center;
 align-items: center;    
-overflow: hidden;
 padding: 3em;
-background-image: url(${HeroPhoto});
-background-position: center;
-background-size: 80%;
-background-repeat: no-repeat;
 
 
-/* @media (min-width: 991px) {
-
-} */
+ @media (max-width: 768px) {
+  align-items: flex-end;   
+} 
 `
 
 const HeroText = styled.div`
@@ -65,17 +60,30 @@ color: #000;
 `}
 `
 
-const Title = styled.h1`
+const Title = styled.div`
 color: #944646;
-font-size: 6em;
+display: grid;
+
+h1 {
 text-transform: uppercase;
 font-weight: bold;
 line-height: 1em;
 text-align: left;
+font-size: 6em;
+}
 
 @media(max-width: 768px){
-  font-size: 4em;
+  h1{
+    font-size: 4em;
+    }
 }
+
+@media(max-width: 400px){
+  h1{
+    font-size: 3em;
+    }
+} 
+
 
 `
 

@@ -57,12 +57,13 @@ a:visited{
     text-decoration: none;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 10px;
     padding: 1rem 1rem 1rem 1rem;
     cursor: pointer;
     font-size: 1.5em;
-    
-    
+    font-weight: 600;
   }
 
   .nav-link:hover {
@@ -79,9 +80,5 @@ a:visited{
       position: relative;
       box-shadow: none;
   }
-
-
-
-
 
 ` 
