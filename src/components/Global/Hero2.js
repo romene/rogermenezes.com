@@ -1,17 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 import heroimg from '../../images/cgtrader-sell-your-3d-models-3f3daf0d60c28e23384449b321a04efb9ba6c41feb3ff4a6153740f5e0a6ad02.png'
+import Fade from 'react-reveal/Fade';
 
 const Hero2 = () => {
   return (
     <HeroWrapper>
       <HeroImg>
-              <img src={heroimg}  alt=""/>
+              <Fade right><img src={heroimg} alt="" /></Fade>
       </HeroImg>
       <HeroIntro>
-          <h5>Hello, My name is</h5>
+          <Fade left>
+              <h5>Hello, My name is</h5>
           <h1>ROGER MENEZES</h1>
           <h4 className="text-center">FRONT-END DEVELOPER * ERP CONSULTANT * MINIMALIST</h4>
+          </Fade>
       </HeroIntro>
     </HeroWrapper>
   )

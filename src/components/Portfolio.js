@@ -14,11 +14,13 @@ const Portfolio = () => {
 
         <GridItem>
           <Card>
-            <CardImg img={Rogerio} />
+            <CardImg Imagem={Rogerio}>
+              </CardImg>
+              
             <CardContent />
           </Card>
           <Card>
-            <CardImg img={churrasco} />
+            <CardImg Imagem={churrasco} />
             <CardContent />
           </Card>
           <Card>
@@ -103,7 +105,7 @@ border-style: solid;
 border-bottom: none;
 border-width: 1px;
 border-radius: 10px 10px 0 0;
-background-image: url(${props => props.img});
+background-image: url(${props => props.Imagem});
 background-size: cover;
 background-position: top center;
 
@@ -121,6 +123,14 @@ background-color: #efefef;
 min-width: 300px;
 min-height: 200px;
  }
+`
+
+const Overlay = styled.div`
+position: absolute;
+width: 100%;
+height: 100%;
+background-color: #000;
+opacity: .5;
 `
 
 

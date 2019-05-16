@@ -1,24 +1,27 @@
 import React from 'react'
 import {Link} from 'gatsby'
 import styled from 'styled-components'
+import Fade from 'react-reveal/Fade';
 
 
 const Menu = (props) => {
   
   return (
      <NavBarLinks open={props.navbarOpen}>
-         <li>
-           <Link to="/" className="nav-link">Home</Link>
-         </li>
-         <li>
-           <Link to="/#about" className="nav-link">About</Link>
-         </li>
-         <li>
-           <Link to="/#portfolio" className="nav-link">Portfolio</Link>
-         </li>
-         <li>
-           <Link to="/#contact" className="nav-link">Contact</Link>
-         </li>
+         <Fade top>
+        <li>
+          <Link to="/" className="nav-link">Home</Link>
+        </li>
+        <li>
+          <Link to="/#about" className="nav-link">About</Link>
+        </li>
+        <li>
+          <Link to="/#portfolio" className="nav-link">Portfolio</Link>
+        </li>
+        <li>
+          <Link to="/#contact" className="nav-link">Contact</Link>
+        </li>
+         </Fade>
        </NavBarLinks>
   )
 }
