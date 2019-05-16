@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <Wrapper>
           <HeroImage>
-              <img src={""} className="" alt=""/>
+              <img src={""} className="img-fluid" alt=""/>
           </HeroImage>
           <HeroText>
               <SubTitle >Hello, My name is</SubTitle>
@@ -27,18 +27,21 @@ export default Hero
 
 const HeroImage = styled.div`
 grid-area: HeroImage;
-max-width: 700px;
+box-sizing: border-box;
 display: flex;
 justify-content: center;
 align-items: center;    
 overflow: hidden;
-box-sizing: border-box;
 padding: 3em;
 background-image: url(${HeroPhoto});
 background-position: center;
 background-size: 80%;
 background-repeat: no-repeat;
 
+
+/* @media (min-width: 991px) {
+
+} */
 `
 
 const HeroText = styled.div`
@@ -70,6 +73,9 @@ font-weight: bold;
 line-height: 1em;
 text-align: left;
 
+@media(max-width: 768px){
+  font-size: 4em;
+}
 
 `
 
