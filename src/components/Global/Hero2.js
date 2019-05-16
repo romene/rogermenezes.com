@@ -43,7 +43,7 @@ grid-template-areas:
 
 // Hero image
 const HeroImg = styled.div`
-width: 100vw;
+width: 100%;
 height: 100%;
 grid-area: Image;
 display: grid;
