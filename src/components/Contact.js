@@ -6,7 +6,7 @@ const Contact = () => {
     <WrapperSection>
       <TitleSection>Get in Touch</TitleSection>
       <div id="contact" className="col-sm-12 col-md-8">
-        <form className="contact-form">
+        <form className="contact-form mb-5">
           <div className="col-md-6 offset-md-3">
             <div className="form-row">
               <div className="form-group col-md-6">

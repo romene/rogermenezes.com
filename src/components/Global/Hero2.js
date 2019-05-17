@@ -26,8 +26,8 @@ export default Hero2
 
 //Hero Wrapper 
 const HeroWrapper = styled.div`
-    width: 100vw;
-    height: 100vh;
+    max-width: 100vw;
+    max-height: 1000px;
     background-color: #fff;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
