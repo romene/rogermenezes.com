@@ -5,6 +5,7 @@ import Rogerio from '../images/RogerioOldLinkdin.png'
 import TitleSection from './Layout/TitleSection'
 import { DiHtml5, DiCss3, DiJsBadge, DiBootstrap, DiMsqlServer, DiReact, DiMongodb, DiNodejs } from "react-icons/di";
 
+
 const About = () => {
     
   return (
@@ -32,6 +33,7 @@ const About = () => {
             <DiReact fill="#61DAFB" size={90} />
             <DiMongodb fill="#439934" size={90} />
             <DiNodejs fill="#83CD29" size={90} />
+           
           </IconSkill>
 
 

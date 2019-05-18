@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'gatsby'
 import WrapperSection from './Layout/WrapperSection'
 import TitleSection from './Layout/TitleSection'
 import Rogerio from '../images/gatsby-astronaut.png'
@@ -13,33 +14,58 @@ const Portfolio = () => {
         <TitleSection>Work Done</TitleSection>
 
         <GridItem>
-          <Card>
-            <CardImg Imagem={Rogerio}>
+          <Link to="">
+            <Card>
+              <CardImg Imagem={Rogerio}>
+                <Overlay/>
+                  
+                
               </CardImg>
+              <CardContent />
+            </Card>
+            </Link>
+
+          <Card>
+            <CardImg Imagem={churrasco}>
+              <Overlay/>
+            </CardImg>
+            <CardContent />
+          </Card>
+          <Card>
+            <CardImg>
+              <Overlay/>
+                
               
-            <CardContent />
-          </Card>
-          <Card>
-            <CardImg Imagem={churrasco} />
-            <CardContent />
-          </Card>
-          <Card>
-            <CardImg />
+            </CardImg>
             <CardContent />
           </Card>
 
           <Card>
-            <CardImg />
+            <CardImg>
+              <img src={Rogerio} className="img-portfolio" alt=""/>
+              <Overlay/>
+              
+            
+            </CardImg>
+            <CardContent />
+          </Card>
+          
+
+          <Card>
+            <CardImg>
+              <Overlay/>
+                
+              
+            </CardImg>
             <CardContent />
           </Card>
 
           <Card>
-            <CardImg />
-            <CardContent />
-          </Card>
-
-          <Card>
-            <CardImg />
+            <CardImg>
+              <Overlay/>
+                
+              
+            </CardImg>
             <CardContent />
           </Card>
         </GridItem>
@@ -85,11 +111,14 @@ max-width: 300px;
 height: auto;
 justify-items: center;
 align-items: center;
+border-radius:  10px 10px 10px 10px;
 box-shadow:  0 10px 50px rgba(0, 0, 0, 0.2);
 grid-template-rows: 1fr 1fr;
 grid-template-areas: 
 "CardImg"
 "CardContent";
+
+ 
 
 @media(max-width: 768px){
   
@@ -111,6 +140,8 @@ background-position: top center;
 
 
 
+
+
 `
 
 const CardContent = styled.div`
@@ -126,11 +157,27 @@ min-height: 200px;
 `
 
 const Overlay = styled.div`
-position: absolute;
-width: 100%;
-height: 100%;
-background-color: #000;
-opacity: .5;
+    position: relative;
+   width: 100%;
+   height: 200px;
+   background-color: black;
+   top: 0;
+   left: 0;
+   opacity: 0;
+   border-radius:  10px 10px 0 0;
+   z-index: 2;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   transition: opacity 1s;
+    p {
+      
+      color: white;
+    }
+
+    ${CardImg}:hover & {
+      opacity: .5;
+    }
 `
 
 

@@ -18,10 +18,10 @@ export default Footer
 const WrapperFooter = styled.div`
 height: 300px;
 background-image: url(${props => props.color});
+opacity: .5;
 background-repeat: no-repeat;
 background-size: cover;
 display: flex;
 justify-content: center;
 align-items: center;
-
 `
