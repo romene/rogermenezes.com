@@ -11,6 +11,21 @@ module.exports = {
       options: {
         // Add any options here
       },
+    },{
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `0gz5fw4s7gs6`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: 'RiTNA_oE_37aKz1TpPyBR1THRqjrxMPcUNbRAnUwkvc',
+      },
+    }, {
+      resolve: `gatsby-remark-images-contentful`,
+      options: {
+        // It's important to specify the maxWidth (in pixels) of
+        // the content container as this plugin uses this as the
+        // base for generating different widths of each image.
+        maxWidth: 700,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,

@@ -1,76 +1,73 @@
 import React from 'react'
-import {Link} from 'gatsby'
+import { StaticQuery, Link, graphql} from 'gatsby'
+import Img from 'gatsby-image'
 import WrapperSection from './Layout/WrapperSection'
 import TitleSection from './Layout/TitleSection'
-import Rogerio from '../images/gatsby-astronaut.png'
-import churrasco from '../images/ciadochurrasco.jpg'
+
 import styled from 'styled-components'
+import WaleLogo from '../images/WaleEngLogo.png'
+import Ciachurrasco from '../images/CiachurrascoLogo.png'
+import VivaldoLogo from '../images/Vivaldo_logo.png'
+import MyLogo from '../images/logoRMSmall.png'
+
+
+
+
 
 
 const Portfolio = () => {
-  return (
-    <div id="portfolio">
-      <WrapperSection>
-        <TitleSection>Work Done</TitleSection>
+  return ( <StaticQuery
+  query={graphql`
+  {
+  portfolio:allContentfulPortfolio{
+    totalCount
+    edges{
+      node{
+        id
+        portfolioTitle
+        portfolioTechnologies
+        portfolioImage{
+          fluid(maxWidth: 700){
+            ...GatsbyContentfulFluid_tracedSVG
+          }
+        }
+      }
+    }
+  }
+}
 
-        <GridItem>
-          <Link to="">
-            <Card>
-              <CardImg Imagem={Rogerio}>
-                <Overlay/>
-                  
-                
-              </CardImg>
-              <CardContent />
-            </Card>
-            </Link>
+  `}
+  render={data => (
+    (
+      <div id="portfolio">
+        <WrapperSection>
+          <TitleSection>Portfolio</TitleSection>
 
-          <Card>
-            <CardImg Imagem={churrasco}>
-              <Overlay/>
-            </CardImg>
-            <CardContent />
-          </Card>
-          <Card>
-            <CardImg>
-              <Overlay/>
-                
-              
-            </CardImg>
-            <CardContent />
-          </Card>
-
-          <Card>
-            <CardImg>
-              <img src={Rogerio} className="img-portfolio" alt=""/>
-              <Overlay/>
-              
+          <GridItem>
+            {data.portfolio.edges.map(item => {
+              console.log(item.node.portfolioImage.fluid)
+              return(
+                <Card key={item.node.id}>
+                  <CardImg>
+                      <Img fluid={item.node.portfolioImage.fluid} />
+                      {/* <Overlay /> */}
+                  </CardImg>
+                  <CardContent>
+                    <h3>{item.node.portfolioTitle}</h3>
+                    <span>Technologies: </span>
+                    <p> {item.node.portfolioTechnologies} </p>
+                  </CardContent>
+                </Card>
+              ) 
+            })}
             
-            </CardImg>
-            <CardContent />
-          </Card>
-          
-
-          <Card>
-            <CardImg>
-              <Overlay/>
-                
-              
-            </CardImg>
-            <CardContent />
-          </Card>
-
-          <Card>
-            <CardImg>
-              <Overlay/>
-                
-              
-            </CardImg>
-            <CardContent />
-          </Card>
-        </GridItem>
-      </WrapperSection>
-    </div>
+          </GridItem>
+        </WrapperSection>
+      </div>
+    )
+  )  }
+   />
+    
   )
 }
 
@@ -85,6 +82,10 @@ const GridItem = styled.div`
 display: grid;
 grid-template-columns: repeat(3, minmax(auto, 300px));
 grid-gap: 1em;
+
+:hover{
+  text-decoration: none !important;
+}
 
 @media (max-width: 991px) {
 grid-template-columns: repeat(2, minmax(auto, 300px));
@@ -107,6 +108,7 @@ grid-gap: 1em; */
 
 const Card = styled.div`
 display: grid;
+cursor: pointer;
 max-width: 300px;
 height: auto;
 justify-items: center;
@@ -127,29 +129,58 @@ grid-template-areas:
 
 const CardImg = styled.div`
 grid-area: CardImg;
-min-width: 100%;
-min-height: 200px;
-border-color: #c2c2c2;
-border-style: solid;
-border-bottom: none;
-border-width: 1px;
+width: 100%;
+height: 200px;
 border-radius: 10px 10px 0 0;
 background-image: url(${props => props.Imagem});
-background-size: cover;
-background-position: top center;
+background-size: contain;
+background-position: center;
+background-repeat: no-repeat;
+text-align: center;
+display: flex;
+flex-direction: column;
+overflow: hidden;
+padding: 0 1em;
 
+.gatsby-image-wrapper{
+  top: 30%;
+    transition: transform .25s ease-in;
+}
 
-
+:hover {
+  transform: scale(1.1);
+  
+}
 
 
 `
 
 const CardContent = styled.div`
 grid-area: CardContent;
+display: grid;
+justify-items: center;
+align-content: center;
+padding: .5em;
 min-width: 300px;
 min-height: 200px;
 border-radius: 0 0 10px 10px;
 background-color: #efefef;
+color: black;
+
+h3 {
+color: #944646;
+}
+
+p{
+  padding: 0 .5em;
+}
+
+span {
+  font-weight: 600;
+}
+
+
+
 @media (max-width: 769px) {
 min-width: 300px;
 min-height: 200px;
@@ -157,15 +188,15 @@ min-height: 200px;
 `
 
 const Overlay = styled.div`
-    position: relative;
+  position: relative;
    width: 100%;
-   height: 200px;
+   height: 100%;
+   padding: 0;
+   margin: 0;
    background-color: black;
    top: 0;
-   left: 0;
-   opacity: 0;
+   opacity: .5;
    border-radius:  10px 10px 0 0;
-   z-index: 2;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -176,7 +207,7 @@ const Overlay = styled.div`
     }
 
     ${CardImg}:hover & {
-      opacity: .5;
+      opacity: 1;
     }
 `
 
