@@ -9,6 +9,8 @@ collections:
   - name: "Portfolio"
     label: "Portfolio"
     publish_mode: editorial_workflow
+    media_folder: "static/images/uploads"
+    public_folder: "src/images"
     folder: "content/portfolio"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
