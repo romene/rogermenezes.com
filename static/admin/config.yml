@@ -8,6 +8,7 @@ public_folder: /img
 collections:
   - name: "Portfolio"
     label: "Portfolio"
+    publish_mode: editorial_workflow
     folder: "content/portfolio"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -15,8 +16,7 @@ collections:
      preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Subtitle", name: "subtitle", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Technologies", name: "technologies", widget: "string" }
       - { label: "Image", name: "thumbnail", widget: "image" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      
