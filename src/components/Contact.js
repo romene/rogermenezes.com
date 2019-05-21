@@ -6,7 +6,11 @@ const Contact = () => {
     <WrapperSection>
       <TitleSection>Get in Touch</TitleSection>
       <div id="contact" className="col-sm-12 col-md-8">
-      <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+      <form
+        name="contact" 
+        method="post" 
+        data-netlify="true" 
+        data-netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="contact" />  
           <div className="col-md-6 offset-md-3">
             <div className="form-row">
@@ -56,7 +60,7 @@ const Contact = () => {
 
             <div className="form-row">
               <div className="form-group col-12">
-                <button type="button" className=" button-contact">
+                <button type="submit" className=" button-contact">
                   Send
                 </button>
               </div>
