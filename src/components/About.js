@@ -9,61 +9,11 @@ import { DiHtml5, DiCss3, DiJsBadge, DiBootstrap, DiMsqlServer, DiReact, DiMongo
 
 const About = () => {
  return(
-   <StaticQuery
-   query={graphql`
-{
-  about:contentfulAbout{
-    aboutMe
-    aboutSubtitule
-    aboutPhoto{
-      fluid(maxWidth: 400) {
-        ...GatsbyContentfulFluid_tracedSVG
-      }
-    }
-  }
-}
-   `}
-   render={data => {
-     
-     const { aboutMe, aboutSubtitule} = data.about
-     const { fluid } = data.about.aboutPhoto
-     return(
-       <WrapperSection id="about">
-         <div>
-           <TitleSection>{aboutMe}</TitleSection>
-           <AboutSubtitle>
-             <h5> {aboutSubtitule} </h5>
-           </AboutSubtitle>
-           <AboutContent>
-             <AboutImage>
-               <Img fluid={fluid} className="img-fluid Rogerio_photo rounded" alt="" />
-             </AboutImage>
-             <AboutText>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime cupiditate accusantium ex sunt eaque quaerat iusto rem! Accusamus aliquam mollitia pariatur quaerat labore quibusdam! Quia et repudiandae deserunt debitis ut.</p>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime cupiditate accusantium ex sunt eaque quaerat iusto rem! Accusamus aliquam mollitia pariatur quaerat labore quibusdam! Quia et repudiandae deserunt debitis ut.</p>
-
-               <h5>My Skills:</h5>
-               <IconSkill>
-                 <DiHtml5 className="iconpb" fill="#E44D26" size={90} />
-                 <DiCss3 className="iconpb" fill="#1572B6" size={90} />
-                 <DiBootstrap className="iconpb" fill="#5B4282" size={90} />
-                 <DiJsBadge className="iconpb" fill="#F1DA4F" size={90} />
-                 <DiMsqlServer className="iconpb" size={90} />
-                 <DiReact className="iconpb" fill="#61DAFB" size={90} />
-                 <DiMongodb className="iconpb" fill="#439934" size={90} />
-                 <DiNodejs className="iconpb" fill="#83CD29" size={90} />
-               </IconSkill>
-
-
-             </AboutText>
-
-           </AboutContent>
-         </div>
-       </WrapperSection>
-     )
-   }}
-    />
+   <div>
+     ola from about
+   </div>
  )
+  
 }
 
 export default About
@@ -142,3 +92,58 @@ justify-content: center;
 
 
 
+{/* <StaticQuery
+   query={graphql`
+{
+  about:contentfulAbout{
+    aboutMe
+    aboutSubtitule
+    aboutPhoto{
+      fluid(maxWidth: 400) {
+        ...GatsbyContentfulFluid_tracedSVG
+      }
+    }
+  }
+}
+   `}
+   render={data => {
+     
+     const { aboutMe, aboutSubtitule} = data.about
+     const { fluid } = data.about.aboutPhoto
+     return(
+       <WrapperSection id="about">
+         <div>
+           <TitleSection>{aboutMe}</TitleSection>
+           <AboutSubtitle>
+             <h5> {aboutSubtitule} </h5>
+           </AboutSubtitle>
+           <AboutContent>
+             <AboutImage>
+               <Img fluid={fluid} className="img-fluid Rogerio_photo rounded" alt="" />
+             </AboutImage>
+             <AboutText>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime cupiditate accusantium ex sunt eaque quaerat iusto rem! Accusamus aliquam mollitia pariatur quaerat labore quibusdam! Quia et repudiandae deserunt debitis ut.</p>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime cupiditate accusantium ex sunt eaque quaerat iusto rem! Accusamus aliquam mollitia pariatur quaerat labore quibusdam! Quia et repudiandae deserunt debitis ut.</p>
+
+               <h5>My Skills:</h5>
+               <IconSkill>
+                 <DiHtml5 className="iconpb" fill="#E44D26" size={90} />
+                 <DiCss3 className="iconpb" fill="#1572B6" size={90} />
+                 <DiBootstrap className="iconpb" fill="#5B4282" size={90} />
+                 <DiJsBadge className="iconpb" fill="#F1DA4F" size={90} />
+                 <DiMsqlServer className="iconpb" size={90} />
+                 <DiReact className="iconpb" fill="#61DAFB" size={90} />
+                 <DiMongodb className="iconpb" fill="#439934" size={90} />
+                 <DiNodejs className="iconpb" fill="#83CD29" size={90} />
+               </IconSkill>
+
+
+             </AboutText>
+
+           </AboutContent>
+         </div>
+       </WrapperSection>
+     )
+   }}
+    />
+ ) */}
