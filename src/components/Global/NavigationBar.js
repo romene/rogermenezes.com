@@ -1,9 +1,8 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 
 import styled from 'styled-components'
 
 import { FaAlignRight } from "react-icons/fa";
-import {Link} from 'gatsby'
 
 import Menu from './Menu'
 // import NavBtn from './NavBtn'

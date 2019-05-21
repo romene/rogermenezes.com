@@ -6,42 +6,16 @@ const Contact = () => {
     <WrapperSection>
       <TitleSection>Get in Touch</TitleSection>
       <div id="contact" className="col-sm-12 col-md-8">
-        <form className="contact-form mb-5">
+        <form name="contact" method="post" className="contact-form mb-5">
+          <input type="hidden" name="form-name" value="contact" />
           <div className="col-md-6 offset-md-3">
             <div className="form-row">
-              <div className="form-group col-md-6">
+              <div className="form-group col-12">
                 <input
                   type="text"
                   className="form-control"
-                  id="inputEmail4"
+                  name="name"
                   placeholder="Name"
-                />
-              </div>
-              <div className="form-group col-md-6">
-                <input
-                  type="email"
-                  className="form-control"
-                  id="inputEmail4"
-                  placeholder="Email"
-                />
-              </div>
-            </div>
-
-            <div className="form-row">
-              <div className="form-group col-md-6">
-                <input
-                  type="email"
-                  className="form-control"
-                  id="inputEmail4"
-                  placeholder="Phone"
-                />
-              </div>
-              <div className="form-group col-md-6">
-                <input
-                  type="text"
-                  className="form-control"
-                  id="inputEmail4"
-                  placeholder="Address"
                 />
               </div>
             </div>
@@ -51,7 +25,18 @@ const Contact = () => {
                 <input
                   type="text"
                   className="form-control"
-                  id="inputEmail4"
+                  name="email"
+                  placeholder="Email"
+                />
+              </div>
+            </div>
+
+            <div className="form-row">
+              <div className="form-group col-12">
+                <input
+                  type="text"
+                  className="form-control"
+                  name="subject"
                   placeholder="Subject"
                 />
               </div>
@@ -62,7 +47,7 @@ const Contact = () => {
                 <textarea
                   type="textarea"
                   className="form-control"
-                  id="inputEmail4"
+                  name="message"
                   placeholder="Message"
                   rows="5"
                 />

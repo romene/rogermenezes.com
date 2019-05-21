@@ -11,7 +11,7 @@ import PropTypes from "prop-types"
 
 
 import Header from "./header"
-import Footer from './footer'
+
 
 import "./layout.css"
 import "./bootstrap.min.css"
@@ -20,7 +20,7 @@ const Layout = ({ children }) => (
  <>
     <Header />
     <main>{children}</main>
-    {/* <Footer/> */}
+   
  </>
 )
 

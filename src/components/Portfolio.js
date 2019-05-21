@@ -5,10 +5,10 @@ import WrapperSection from './Layout/WrapperSection'
 import TitleSection from './Layout/TitleSection'
 
 import styled from 'styled-components'
-import WaleLogo from '../images/WaleEngLogo.png'
-import Ciachurrasco from '../images/CiachurrascoLogo.png'
-import VivaldoLogo from '../images/Vivaldo_logo.png'
-import MyLogo from '../images/logoRMSmall.png'
+// import WaleLogo from '../images/WaleEngLogo.png'
+// import Ciachurrasco from '../images/CiachurrascoLogo.png'
+// import VivaldoLogo from '../images/Vivaldo_logo.png'
+// import MyLogo from '../images/logoRMSmall.png'
 
 
 
@@ -20,21 +20,20 @@ const Portfolio = () => {
   query={graphql`
   {
   portfolio:allContentfulPortfolio{
-    totalCount
     edges{
       node{
         id
         portfolioTitle
         portfolioTechnologies
         portfolioImage{
-          fluid(maxWidth: 700){
+          fluid(maxWidth: 300){
             ...GatsbyContentfulFluid_tracedSVG
           }
         }
       }
     }
   }
-}
+} 
 
   `}
   render={data => (
@@ -45,17 +44,16 @@ const Portfolio = () => {
 
           <GridItem>
             {data.portfolio.edges.map(item => {
-              console.log(item.node.portfolioImage.fluid)
+              const { portfolioTitle, portfolioTechnologies} = item.node
               return(
                 <Card key={item.node.id}>
                   <CardImg>
                       <Img fluid={item.node.portfolioImage.fluid} />
-                      {/* <Overlay /> */}
                   </CardImg>
                   <CardContent>
-                    <h3>{item.node.portfolioTitle}</h3>
+                    <h3>{portfolioTitle}</h3>
                     <span>Technologies: </span>
-                    <p> {item.node.portfolioTechnologies} </p>
+                    <p> {portfolioTechnologies.toUpperCase()} </p>
                   </CardContent>
                 </Card>
               ) 
@@ -187,29 +185,29 @@ min-height: 200px;
  }
 `
 
-const Overlay = styled.div`
-  position: relative;
-   width: 100%;
-   height: 100%;
-   padding: 0;
-   margin: 0;
-   background-color: black;
-   top: 0;
-   opacity: .5;
-   border-radius:  10px 10px 0 0;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   transition: opacity 1s;
-    p {
+// const Overlay = styled.div`
+//   position: relative;
+//    width: 100%;
+//    height: 100%;
+//    padding: 0;
+//    margin: 0;
+//    background-color: black;
+//    top: 0;
+//    opacity: .5;
+//    border-radius:  10px 10px 0 0;
+//    display: flex;
+//    justify-content: center;
+//    align-items: center;
+//    transition: opacity 1s;
+//     p {
       
-      color: white;
-    }
+//       color: white;
+//     }
 
-    ${CardImg}:hover & {
-      opacity: 1;
-    }
-`
+//     ${CardImg}:hover & {
+//       opacity: 1;
+//     }
+// `
 
 
 

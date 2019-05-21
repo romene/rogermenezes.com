@@ -5,9 +5,7 @@
   box-sizing: border-box;
 }
 
-*:focus {
-    outline: none !important;
-}
+
 
 .MyLogo{
   max-height: 3.5rem;
