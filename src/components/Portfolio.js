@@ -47,7 +47,7 @@ render={data => {
                 <CardImg>
               <Img fluid={fluid} alt={portfolioTitle} />
                 </CardImg>
-                <a href={link} target="_blank">
+            <a href={link} target="_blank" rel="noopener">
                   <CardContent>
                   <h3> {portfolioTitle} </h3>
                   <span>Technologies: </span>
