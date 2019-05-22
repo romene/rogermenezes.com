@@ -12,7 +12,7 @@ const Contact = () => {
         data-netlify="true" 
         data-netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="contact" />  
-          <div className="col-md-6 offset-md-3">
+          <div className="col-md-8 offset-md-2">
             <div className="form-row">
               <div className="form-group col-12">
                 <input

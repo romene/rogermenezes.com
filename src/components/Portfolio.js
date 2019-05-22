@@ -12,18 +12,60 @@ import styled from 'styled-components'
 
 
 
-
-
-
-const Portfolio = () => {
-  return (
-    <div>
-      Ola from portfolio
-    </div>
-   )
+export default () => (
+  <StaticQuery
+  query={graphql`
+  {
+  portfolio:allContentfulPortfolio{
+    edges{
+      node{
+        id
+        portfolioTitle
+        portfolioTechnologies
+        link
+        portfolioImage{
+          fluid{
+            ...GatsbyContentfulFluid_tracedSVG
+          }
+        }
+      }
+    }
+  }
 }
+`}
+render={data => {
+  return(
+    <div id="portfolio">
+      <WrapperSection>
+        <TitleSection>Portfolio</TitleSection>
+          <GridItem>
+      {data.portfolio.edges.map((item) => {
+        const { id , portfolioTitle, portfolioTechnologies, link } = item.node
+        const { fluid } = item.node.portfolioImage
+        return( 
+            <Card key={id}>
+                <CardImg>
+              <Img fluid={fluid} alt={portfolioTitle} />
+                </CardImg>
+                <a href={link} target="_blank">
+                  <CardContent>
+                  <h3> {portfolioTitle} </h3>
+                  <span>Technologies: </span>
+                  <p> {portfolioTechnologies.toUpperCase()} </p>
+                </CardContent>
+               </a>
+              </Card>
+          )
+      })}
+        
+        </GridItem>
+      </WrapperSection>
+    </div>
+  )
+}} />
+)
 
-export default Portfolio
+ 
 
 
 
@@ -72,7 +114,11 @@ grid-template-areas:
 "CardImg"
 "CardContent";
 
- 
+ a{
+   :link{
+     text-decoration: none;
+   }
+ }
 
 @media(max-width: 768px){
   
@@ -125,6 +171,7 @@ color: #944646;
 
 p{
   padding: 0 .5em;
+  text-align: center;
 }
 
 span {
@@ -162,61 +209,3 @@ min-height: 200px;
 //       opacity: 1;
 //     }
 // `
-
-
-
-
-
-
-
-// <StaticQuery
-//   query={graphql`
-//   {
-//   portfolio:allContentfulPortfolio{
-//     edges{
-//       node{
-//         id
-//         portfolioTitle
-//         portfolioTechnologies
-//         portfolioImage{
-//           fluid(maxWidth: 300){
-//             ...GatsbyContentfulFluid_tracedSVG
-//           }
-//         }
-//       }
-//     }
-//   }
-// } 
-
-//   `}
-//   render={data => (
-//     (
-//       <div id="portfolio">
-//         <WrapperSection>
-//           <TitleSection>Portfolio</TitleSection>
-
-//           <GridItem>
-//             {data.portfolio.edges.map(item => {
-//               const { portfolioTitle, portfolioTechnologies} = item.node
-//               return(
-//                 <Card key={item.node.id}>
-//                   <CardImg>
-//                       <Img fluid={item.node.portfolioImage.fluid} className="" />
-//                   </CardImg>
-//                   <CardContent>
-//                     <h3>{portfolioTitle}</h3>
-//                     <span>Technologies: </span>
-//                     <p> {portfolioTechnologies.toUpperCase()} </p>
-//                   </CardContent>
-//                 </Card>
-//               ) 
-//             })}
-            
-//           </GridItem>
-//         </WrapperSection>
-//       </div>
-//     )
-//   )  }
-//    />
-    
-  

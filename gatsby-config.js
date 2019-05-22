@@ -1,31 +1,43 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `RogerMenezes.com`,
+    description: `Roger Menezes Personal Page .`,
+    author: `@rogermenezes`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify-cms`,
     {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 590,
+            },
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         // Add any options here
       },
-    },{
-      resolve: `gatsby-source-contentful`,
+    }, {
+      resolve: `gatsby-source-filesystem`,
       options: {
-        spaceId: `0gz5fw4s7gs6`,
-        // Learn about environment variables: https://gatsby.dev/env-vars
-        accessToken: 'RiTNA_oE_37aKz1TpPyBR1THRqjrxMPcUNbRAnUwkvc',
+        path: `${__dirname}/static/img/`,
       },
     }, {
-      resolve: `gatsby-remark-images-contentful`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        // It's important to specify the maxWidth (in pixels) of
-        // the content container as this plugin uses this as the
-        // base for generating different widths of each image.
-        maxWidth: 700,
+        name: `portfolio`,
+        path: `${__dirname}/content/portfolio`,
       },
     },
     {
@@ -47,6 +59,13 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    }, {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `hraw6sv426f0`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: `QMl5x43J3RMzOG2rtk3Jg3cl4o0bAVBTfXJu8AQvdvA`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
