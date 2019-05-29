@@ -7,7 +7,6 @@ import TitleSection from './Layout/TitleSection'
 import { DiHtml5, DiCss3, DiJsBadge, DiBootstrap, DiMsqlServer, DiReact, DiMongodb, DiNodejs } from "react-icons/di";
 
 
-
 const About = () => (
   <StaticQuery
   query={graphql`

@@ -1,14 +1,9 @@
 import React from 'react'
-import { StaticQuery, Link, graphql} from 'gatsby'
+import { StaticQuery, graphql} from 'gatsby'
 import Img from 'gatsby-image'
 import WrapperSection from './Layout/WrapperSection'
 import TitleSection from './Layout/TitleSection'
-
 import styled from 'styled-components'
-// import WaleLogo from '../images/WaleEngLogo.png'
-// import Ciachurrasco from '../images/CiachurrascoLogo.png'
-// import VivaldoLogo from '../images/Vivaldo_logo.png'
-// import MyLogo from '../images/logoRMSmall.png'
 
 
 
@@ -47,7 +42,7 @@ render={data => {
                 <CardImg>
               <Img fluid={fluid} alt={portfolioTitle} />
                 </CardImg>
-            <a href={link} target="_blank" rel="noopener">
+            <a href={link} target="_blank" rel="noopener noreferrer">
                   <CardContent>
                   <h3> {portfolioTitle} </h3>
                   <span>Technologies: </span>
