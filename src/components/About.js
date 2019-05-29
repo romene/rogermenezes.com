@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import WrapperSection from './Layout/WrapperSection'
 import TitleSection from './Layout/TitleSection'
-import { DiHtml5, DiCss3, DiJsBadge, DiBootstrap, DiMsqlServer, DiReact, DiMongodb, DiNodejs } from "react-icons/di";
+import { DiHtml5, DiCss3, DiJsBadge, DiBootstrap, DiMsqlServer, DiReact, DiMongodb, DiNodejs, DiSass, DiNpm, DiGit} from "react-icons/di";
 
 
 const About = () => (
@@ -49,6 +49,10 @@ to take a design and develop it into a website that works.</p>
                 <DiReact className="iconpb" fill="#61DAFB" size={90} />
                 <DiMongodb className="iconpb" fill="#439934" size={90} />
                 <DiNodejs className="iconpb" fill="#83CD29" size={90} />
+                <DiSass className="iconpb" fill="#CB6699" size={90} />
+                <DiNpm className="iconpb" fill="#ff0000" size={90} />
+                <DiGit className="DiGit" fill="#F05033" size={90} />
+               
               </IconSkill>
 
 
