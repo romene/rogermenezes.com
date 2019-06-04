@@ -4,16 +4,22 @@ import Img from 'gatsby-image'
 import WrapperSection from './Layout/WrapperSection'
 import TitleSection from './Layout/TitleSection'
 import styled from 'styled-components'
-
+import ciadocurrasco from '../images/CiachurrascoLogo.png'
 
 
 export default () => (
   <StaticQuery
   query={graphql`
-  {
-  portfolio:allContentfulPortfolio{
+   {
+  portfolio:allContentfulPortfolio(
+    sort: {
+      fields: [createdAt]
+      order: DESC
+    }
+  ){
     edges{
       node{
+        createdAt
         id
         portfolioTitle
         portfolioTechnologies
@@ -27,6 +33,7 @@ export default () => (
     }
   }
 }
+
 `}
 render={data => {
   return(
@@ -162,6 +169,7 @@ color: black;
 
 h3 {
 color: #944646;
+text-align: center;
 }
 
 p{
