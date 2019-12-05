@@ -25,14 +25,14 @@ const Posts = props.data.allContentfulBlogPost.edges.filter(post => props.locati
 return (
    <React.Fragment>
     <Hero />
-        {/* <StyledBlogWrapper>
+        <StyledBlogWrapper>
             <StyledBlogTitle>{title}</StyledBlogTitle>
       <StyledSubTitle>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi voluptatum ratione voluptatem accusantium repellat nisi, sint perferendis tempore, voluptatibus neque necessitatibus corrupti quam eaque! Dolorum voluptatem modi fugit velit unde?</StyledSubTitle>
       <StyledPostInfo>
         <p>By: {writtenBy} - {publishedAt} </p>
       </StyledPostInfo>
       <StyledRichText> {documentToReactComponents(json, options)} </StyledRichText> 
-        </StyledBlogWrapper> */}
+        </StyledBlogWrapper>
   </React.Fragment>
 )
 }

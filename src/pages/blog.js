@@ -47,7 +47,7 @@ const BlogPage = (props) => {
             <React.Fragment>
               <h1 style={{textAlign: 'center'}}>Coming Soon...</h1>
               <Link key={id} style={LinkStyle} to={`/blog/${slug}`}>
-                <BlogCard>
+                {/* <BlogCard>
                   <BlogCardImage>
                     <Img backgroundColor="#fff" fixed={fixed} alt={title} />
                   </BlogCardImage>
@@ -56,7 +56,7 @@ const BlogPage = (props) => {
                     <span>{`${publishedAt} - ${writtenBy}`}</span>
                     <p>{subtitle}</p>
                   </BlogCardBody>
-                </BlogCard>
+                </BlogCard> */}
               </Link>
             </React.Fragment>
           )
