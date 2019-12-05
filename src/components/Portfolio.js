@@ -24,7 +24,7 @@ export default () => (
         portfolioTechnologies
         link
         portfolioImage{
-          fluid{
+          fluid(maxWidth: 300){
             ...GatsbyContentfulFluid_tracedSVG
           }
         }
@@ -44,18 +44,24 @@ render={data => {
         const { id , portfolioTitle, portfolioTechnologies, link } = item.node
         const { fluid } = item.node.portfolioImage
         return( 
+          <a style={{textDecoration: 'none'}} href={link} target="_blank" rel="noopener noreferrer">
             <Card key={id}>
+                
                 <CardImg>
-              <Img fluid={fluid} alt={portfolioTitle} />
+              
+              <Img  imgStyle={{maxHeight: 200, maxWidth: 300}} fluid={fluid} alt={portfolioTitle} />
                 </CardImg>
-            <a href={link} target="_blank" rel="noopener noreferrer">
+
+
+          
                   <CardContent>
                   <h3> {portfolioTitle} </h3>
                   <span>Technologies: </span>
                   <p> {portfolioTechnologies.toUpperCase()} </p>
                 </CardContent>
-               </a>
+               
               </Card>
+            </a>
           )
       })}
         
@@ -102,6 +108,7 @@ grid-gap: 1em; */
 `
 
 const Card = styled.div`
+overflow: hidden;
 display: grid;
 cursor: pointer;
 max-width: 300px;
@@ -115,41 +122,27 @@ grid-template-areas:
 "CardImg"
 "CardContent";
 
- a{
-   :link{
-     text-decoration: none;
-   }
- }
-
-@media(max-width: 768px){
-  
-}
 `
 
 const CardImg = styled.div`
-grid-area: CardImg;
-width: 100%;
-height: 200px;
-border-radius: 10px 10px 0 0;
-background-image: url(${props => props.Imagem});
-background-size: contain;
-background-position: center;
-background-repeat: no-repeat;
-text-align: center;
-display: flex;
-flex-direction: column;
 overflow: hidden;
-padding: 0 2em;
-
-.gatsby-image-wrapper{
-  top: 30%;
-    transition: transform .25s ease-in;
+grid-area: CardImg;
+width: 300px;
+max-height: 200px;
+border-radius: 10px 10px 0 0;
+display: grid;
 }
 
-:hover {
+ .gatsby-image-wrapper{
+  overflow: hidden !important;
+  transition: transform .4s;
+ 
+
+ :hover{
   transform: scale(1.2);
-  
-}
+ }
+
+
 
 
 `
@@ -165,6 +158,7 @@ min-height: 200px;
 border-radius: 0 0 10px 10px;
 background-color: #efefef;
 color: black;
+
 
 h3 {
 color: #944646;

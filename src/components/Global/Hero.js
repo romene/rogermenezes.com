@@ -34,7 +34,11 @@ background-position: center;
     margin-top: 2em;
   }
  @media (max-width: 768px) {
-  align-items: flex-end;   
+  align-items: flex-end;  
+  
+  h1{
+    display: none;
+  }
 } 
 `
 
