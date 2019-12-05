@@ -6,9 +6,9 @@ import Hero from '../components/Global/Hero'
 
 
 const BlogTemplate = (props) => {
- 
-const myProxy = '/blog/'
-const Posts = props.data.allContentfulBlogPost.edges.filter(post => props.path === myProxy+post.node.slug )
+ console.log("MERDA" ,props.location.pathname)
+const myProxy = '/blog/' || 'http://www.rogermenezes.com'
+const Posts = props.data.allContentfulBlogPost.edges.filter(post => props.location.pathname === myProxy+post.node.slug )
     const { title,  publishedAt, writtenBy } = Posts[0].node
     const { json } = Posts[0].node.richTextBlog
   console.log(Posts[0].node)
