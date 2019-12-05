@@ -6,17 +6,16 @@ import Hero from '../components/Global/Hero'
 
 
 const BlogTemplate = (props) => {
-  console.log(props)
  
 const myProxy = '/blog/'
 const Posts = props.data.allContentfulBlogPost.edges.filter(post => props.path === myProxy+post.node.slug )
     const { title,  publishedAt, writtenBy } = Posts[0].node
     const { json } = Posts[0].node.richTextBlog
+  console.log(Posts[0].node)
   
     const options = {
     renderNode: {
       "embedded-asset-block": (node) => {
-        console.log(node.data.target.fields.file['en-US'].url)
         const imageData = node.data.target.fields.file['en-US'].url
         return <img style={{maxWidth: 350}} src={imageData}  alt="Blog_Image" />
       }
@@ -41,7 +40,6 @@ return (
 export const queryBlog = graphql`
          {
            allContentfulBlogPost {
-             totalCount
              edges {
                node {
                  id

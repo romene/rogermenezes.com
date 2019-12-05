@@ -12,7 +12,6 @@ export const queryBlog = graphql`
          query {
            allContentfulBlogPost(sort: { fields: publishedAt, order: DESC }) {
              edges {
-
                node {
                  id
                  slug
@@ -35,7 +34,6 @@ export const queryBlog = graphql`
        `
 
 const BlogPage = (props) => {
-  console.log("MERDA", props.data)
   const Blogs = props.data.allContentfulBlogPost.edges
   return (
     <Layout>
@@ -48,7 +46,7 @@ const BlogPage = (props) => {
           return (
             <React.Fragment>
               <h1 style={{textAlign: 'center'}}>Coming Soon...</h1>
-              {/* <Link key={id} style={LinkStyle} to={`/blog/${slug}`}>
+              <Link key={id} style={LinkStyle} to={`/blog/${slug}`}>
                 <BlogCard>
                   <BlogCardImage>
                     <Img backgroundColor="#fff" fixed={fixed} alt={title} />
@@ -59,7 +57,7 @@ const BlogPage = (props) => {
                     <p>{subtitle}</p>
                   </BlogCardBody>
                 </BlogCard>
-              </Link> */}
+              </Link>
             </React.Fragment>
           )
         })}
