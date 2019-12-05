@@ -10,19 +10,18 @@ import PropTypes from "prop-types"
 
 
 
-import Header from "./header"
-
 
 import "./layout.css"
 import "./bootstrap.min.css"
 
-const Layout = ({ children }) => (
- <>
-    <Header />
-    <main>{children}</main>
-   
- </>
-)
+const Layout = ({ children }) => {
+  return(
+    <>
+    
+      <main>{children}</main>
+    </>
+  )
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

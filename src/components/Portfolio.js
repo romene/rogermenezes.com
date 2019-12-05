@@ -4,7 +4,6 @@ import Img from 'gatsby-image'
 import WrapperSection from './Layout/WrapperSection'
 import TitleSection from './Layout/TitleSection'
 import styled from 'styled-components'
-import ciadocurrasco from '../images/CiachurrascoLogo.png'
 
 
 export default () => (

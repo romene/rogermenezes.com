@@ -21,7 +21,7 @@ export default class NavigationBar extends Component {
   render() {
    
    return (
-      <NavBar>
+      <NavBar color>
        <NavLogo /> 
        <Menu navbarOpen={this.state.navbarOpen}  />
 
@@ -38,18 +38,14 @@ export default class NavigationBar extends Component {
 
 // NavBar 
 const NavBar = styled.nav`
-min-height: 3.5rem;
-background-color: white;
-display: grid;
-grid-template-columns: auto 1fr auto;
-grid-template-rows: auto;
-grid-template-areas: 
-"Logo Menu MenuBtn";
-justify-items: center;
-align-content: center;
-
-
-
+  min-height: 3.5rem;
+  background-color: ${props => props.color || 'transparent'};
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto;
+  grid-template-areas: "Logo Menu MenuBtn";
+  justify-items: center;
+  align-content: center;
 `
 
 

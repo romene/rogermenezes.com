@@ -19,6 +19,9 @@ const Menu = (props) => {
           <Link to="/#portfolio" className="nav-link">Portfolio</Link>
         </li>
         <li>
+          <Link to="/blog" className="nav-link">Blog</Link>
+        </li>
+        <li>
           <Link to="/#contact" className="nav-link">Contact</Link>
         </li>
          </Fade>
@@ -34,6 +37,9 @@ export default Menu
 
 const NavBarLinks = styled.ul`
 grid-area: Menu;
+position: absolute;
+top: 0;
+z-index: 999;
 padding: ${props => props.open ? '3.5rem 0 .5rem 0' : '0'};
 overflow: hidden;
 height: ${props => props.open ? 'auto' : '0'};

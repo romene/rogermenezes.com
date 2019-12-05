@@ -7,13 +7,22 @@ import Layout from "../components/layout"
 import About from '../components/About'
 import Portfolio from '../components/Portfolio'
 import Contact from '../components/Contact'
+import Header from "../components/header"
+import NavigationBar from "../components/Global/NavigationBar"
 
-const IndexPage = () => (
-  <Layout>
+const IndexPage = (props) => {
+console.log(props)
+
+  return(
+
+   <Layout>
+     <NavigationBar/>
+    <Header />
     <About />
     <Portfolio />
     <Contact />
   </Layout>
-)
+ )
+}
 
 export default IndexPage
